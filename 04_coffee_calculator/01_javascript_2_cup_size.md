@@ -1,9 +1,13 @@
-Trello: as a user I can select the cup size of my coffee mug.
+#### Trello: as a user I can select the cup size of my coffee mug.
 
-Now the fun begins, let's create our component the same way we usually do by first creating a folder in the component's folder and call it CupSize and then make a new file called index.js
+Now the fun begins, let's create our component the same way we usually do by first creating a folder in the component's folder and call it CupSize and then make a new file called `index.js`
 
-In this component we'll have three buttons representing the three standard coffee cup sizes which are 8oz(227ml), 12oz(240ml) and 16oz(454ml).
+In this component we'll have three buttons representing the three standard coffee cup sizes which are 
+- 8oz(227ml)
+- 12oz(240ml)
+- 16oz(454ml).
 
+```
 import React from "react";
 
 //Styling
@@ -21,11 +25,12 @@ const CupSize = () => {
   );
 };
 export default CupSize;
+```
 
 
+Now to view it on the page let's import it in the `BrewingMethodModal/index.js` and place it under the **BrewingMethodDetails** components in the body.
 
-Now to view it on the page let's import it in the BrewingMethodModal/index.js and place it under the BrewingMethodDetails components in the body.
-
+```
 import React from "react";
 //Components
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -53,3 +58,4 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
   );
 };
 export default BrewingMethodModal;
+```
