@@ -4,10 +4,11 @@ and that component will be a number slider that we will import from material-ui.
 
 the slider will help determine how 'strong' or 'light' the coffee will be.
 
-let's make a new folder in the component's folder and call it AmountCalculator and create an index.js file.
+let's make a new folder in the component's folder and call it `AmountCalculator` and create an `index.js` file.
 
 first let's import the slider.
 
+```
 import React from "react";
 
 //Components
@@ -69,14 +70,16 @@ const AmountCalculator = () => {
   );
 };
 export default AmountCalculator;
+```
 
 The marks variable is an array to store the values of the slider to be displayed and also that we will use later for the calculation.
 and the handleRatio function just returned those values as a string. 
-so again so far this just displays the value but doesn't affect anything, so let's put the CupSize component and the BrewingMethodDetails in this AmountCalculator/index.js file.
-and put the AmountCalculator component in the BrewingMethodModal/index.js file to make things easier for later.
+so again so far this just displays the value but doesn't affect anything, so let's put the `CupSize` component and the `BrewingMethodDetails` in this `AmountCalculator/index.js` file.
+and put the `AmountCalculator` component in the `BrewingMethodModal/index.js` file to make things easier for later.
 
-don't forget to pass the brewingMethod as props.
+don't forget to pass the **brewingMethod** as props.
 
+```
 import React from "react";
 //Components
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -102,12 +105,12 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
   );
 };
 export default BrewingMethodModal;
+```
 
 
+**AmountCalculator/index.js**
 
-AmountCalculator/index.js
-
-
+```
 import React from "react";
 
 //Components
@@ -178,4 +181,4 @@ const AmountCalculator = ({ brewingMethod }) => {
   );
 };
 export default AmountCalculator;
-
+```
