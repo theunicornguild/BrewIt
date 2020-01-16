@@ -2,15 +2,16 @@
 
 After cloning the project and installing the packages you can see that there’s some code written for you as a starter which includes all the css and styling as well.
 
-You will also have a  src/data.js file.
+You will also have a  `src/data.js` file.
 This file contains all of the brewing methods’ information that we will display and use later on.
 
 
-We’ll first begin by displaying the brewing methods’ names and images that we’ll import from the src/data.js file.
+We’ll first begin by displaying the brewing methods’ names and images that we’ll import from the `src/data.js` file.
 To do this we have to map through the array of objects which we have stored as a state as ‘brewingMethods’.
 
-Your App.js file should look something like this:
+Your `App.js` file should look something like this:
 
+```
 import React, { useState } from "react";
 import "./App.css";
 
@@ -36,4 +37,4 @@ function App() {
 }
 
 export default App;
-
+```
