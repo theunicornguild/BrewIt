@@ -1,15 +1,15 @@
-Trello: I can then see details of that specific brewing method.
+#### Trello: I can then see details of that specific brewing method.
 
 Now that we have our 'base' we can add all the information and additional components that will help the user brew their coffee!
 
-First let display some information about the brewing method on the modal with some of the data provided in the data.js file.
+First let display some information about the brewing method on the modal with some of the data provided in the `data.js` file.
 
-In your BrewingMethodModal/index.js file let's add brewingMethod as a prop so we can access the information for each brewing method.
+In your `BrewingMethodModal/index.js` file let's add brewingMethod as a prop so we can access the information for each brewing method.
 
 let's add the name in the modal header and grind size, total_time, grams of coffee and the water amount in the modal body.
 As mentioned earlier all styling is already provided.
 
-
+```
 import React from "react";
 //Components
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -51,13 +51,14 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
   );
 };
 export default BrewingMethodModal;
-
+```
 
 To make things easier for ourselves later on let's put these details in their own component.
-In the components folder make a new folder called 'BrewingMethodDetails' and in that make an index.js file and paste the details we just wrote and of course don't forget to pass the props.
+In the components folder make a new folder called 'BrewingMethodDetails' and in that make an `index.js` file and paste the details we just wrote and of course don't forget to pass the props.
 
-BrewingMethodDetails/index.js
+`BrewingMethodDetails/index.js`
 
+```
 import React from "react";
 
 //Styling
@@ -86,10 +87,11 @@ const BrewingMethodDetails = ({ brewingMethod }) => {
   );
 };
 export default BrewingMethodDetails;
+```
 
+and now let's remove all that code from the `BrewingMethodModal` file and just render that componet instead.
 
-and now let's remove all that code from the BrewingMethodModal file and just render that componet instead.
-
+```
 import React from "react";
 //Components
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -113,7 +115,7 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
   );
 };
 export default BrewingMethodModal;
-
+```
 
 
 that's it! now in the next chapters we'll create some components that will help the user adjust their coffee based on their preference.
