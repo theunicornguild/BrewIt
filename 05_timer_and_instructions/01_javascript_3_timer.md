@@ -29,9 +29,8 @@ export default Timer;
 ```
 
 To view this, let's call this component in our `BrewingMethodModal` and place it under the `AmountCalculator` component. Let's also pass **brewingMethod** as a prop so we can use it for an extra feature later.
-`
-        <Timer brewingMethod={brewingMethod} />
-`
+
+`<Timer brewingMethod={brewingMethod} />`
 
 Now let's create our states which are Seconds, Minutes which will store the value of the timer and `isActive` which will have the timer's state to check whether it's active or paused.
 
