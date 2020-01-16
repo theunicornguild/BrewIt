@@ -7,56 +7,56 @@ First we'll add a few states,
 -one to set the coffee grams amount based on the calculation(grams).
 -another one for the water amount for the coffee(water).
 -the last one to store the value from the component CupSize which will be initalized to 227 as a default(selectedOption).
-
+```
   const [amount, setAmount] = useState();
   const [grams, setGrams] = useState();
   const [water, setWater] = useState();
   const [selectedOption, setSelectedOption] = useState(227);
-
-  Now in our slider component we already have the handleRatio function being used there to simply return the value as a string. We'll add to the function so that it will also set the state.
-
+```
+  Now in our slider component we already have the `handleRatio` function being used there to simply return the value as a string. We'll add to the function so that it will also set the state.
+```
     const handleRatio = value => {
     setAmount(value);
     return JSON.stringify(value);
   };
-
- Another thing we'll need is a function that we'll call handleChange. Which will do our main calculation for the coffee grams and water amount.
+```
+ Another thing we'll need is a function that we'll call `handleChange`. Which will do our main calculation for the coffee grams and water amount.
 
  the general equation is (cupsize/ratio amount) * 15.
-
+```
    const handleChange = () => {
     setGrams(parseInt(selectedOption / amount));
     setWater(parseInt(grams * 15));
   };
-
-  and finally we'll put handleChange in handleRatio so it would call it whenever the users chooses another value form the slider.
-
+```
+  and finally we'll put `handleChange` in `handleRatio` so it would call it whenever the users chooses another value form the slider.
+```
     const handleRatio = value => {
     setAmount(value);
     handleChange();
     return JSON.stringify(value);
   };
+```
 
-
-  Before switching to the CupSize component let's first send some props to it.
-  Add handleChange, selectedOption and setSelectedOption.
-
+  Before switching to the `CupSize` component let's first send some props to it.
+  Add `handleChange`, `selectedOption` and `setSelectedOption`.
+```
    <CupSize
         handleChange={handleChange}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
       />
-
-Now going over to CupSize and use these props to store our value.
-first we'll need another function to store the value on an onClick for each size(button) of the selected size in ml.
-
+```
+Now going over to `CupSize` and use these props to store our value.
+first we'll need another function to store the value on an `onClick` for each size(button) of the selected size in ml.
+```
   const handleChoice = e => {
     setSelectedOption(e);
     handleChange(selectedOption);
   };
-
+```
   so the whole thing will look something like this.
-
+```
   import React from "react";
 
 //Styling
@@ -84,10 +84,11 @@ const CupSize = ({ handleChange, selectedOption, setSelectedOption }) => {
   );
 };
 export default CupSize;
+```
 
-Going back to to the AmountCalculator the last thing we need to do here is pass the grams and water value to BrewingMethodDetails so it will change based on the user's choices. so this will be the finished code.
+Going back to to the `AmountCalculator` the last thing we need to do here is pass the grams and water value to **BrewingMethodDetails** so it will change based on the user's choices. so this will be the finished code.
 
-
+```
 import React, { useState } from "react";
 
 //Components
@@ -177,7 +178,7 @@ const AmountCalculator = ({ brewingMethod }) => {
   );
 };
 export default AmountCalculator;
-
+```
 
 and now you made your own basic coffee calculator!
 
