@@ -1,4 +1,5 @@
 #### Trello: I can then see details of that specific brewing method.
+once again, let's move the card from `Backlog/To-do` to `Doing`.
 
 Now that we have our 'base' we can add all the information and additional components that will help the user brew their coffee!
 
@@ -53,10 +54,10 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
 export default BrewingMethodModal;
 ```
 
-To make things easier for ourselves later on let's put these details in their own component.
-In the components folder make a new folder called 'BrewingMethodDetails' and in that make an `index.js` file and paste the details we just wrote and of course don't forget to pass the props.
+To make things easier for ourselves later let's put these details in their own component.
+In the `Components` folder make a new folder called `BrewingMethodDetails` and in that make an `index.js` file and paste the details we just wrote and of course don't forget to pass the props.
 
-`BrewingMethodDetails/index.js`
+`src/Components/BrewingMethodDetails/index.js`
 
 ```
 import React from "react";
@@ -117,5 +118,7 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
 export default BrewingMethodModal;
 ```
 
+and lastly, as the previous chapters move your trello card to `Done` and `push` your code to store your changes.
 
 that's it! now in the next chapters we'll create some components that will help the user adjust their coffee based on their preference.
+
