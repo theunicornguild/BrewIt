@@ -1,11 +1,15 @@
 #### Trello: as a user I can select the cup size of my coffee mug.
 
-Now the fun begins, let's create our component the same way we usually do by first creating a folder in the component's folder and call it CupSize and then make a new file called `index.js`
+Before we start anything lets move the trello card from `Backlog-To-do` to `Doing`.
+
+Now the fun begins, let's create our component the same way we usually do by first creating a folder in the Component's folder and call it `CupSize` and then make a new file called `index.js`
 
 In this component we'll have three buttons representing the three standard coffee cup sizes which are 
 - 8oz(227ml)
 - 12oz(240ml)
 - 16oz(454ml).
+
+`src/Components/CupSize/index.js`
 
 ```
 import React from "react";

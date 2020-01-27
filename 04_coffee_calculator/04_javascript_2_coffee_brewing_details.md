@@ -1,7 +1,7 @@
 Last step before jumping into our last two components is to use the props that we sent and place them instead of the static coffee grams and water value that we had previously.
 
 So your `BrewingMethodDetails` should look like this.
-
+**src/Components/BrewingMethodDetails/index.js**
 ```
 import React from "react";
 
@@ -33,3 +33,5 @@ const BrewingMethodDetails = ({ brewingMethod, grams, water }) => {
 export default BrewingMethodDetails;
 ```
 and voila!
+
+git `add`, `commit` and `push` your code and move the two trello card to `Done`!
