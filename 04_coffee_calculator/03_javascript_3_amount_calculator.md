@@ -1,12 +1,12 @@
-we've now done two of our main components and combined them in in one component which is the AmountCalculator but it still doesn't change any values.
+we've now done two of our main components and combined them in in one component which is `AmountCalculator` but it still doesn't change any values.
 
 we're going to add all the functions and pass all the props required to make our component more useful.
 
 First we'll add a few states, 
--one for the slider component amount,the ratio (amount).
--one to set the coffee grams amount based on the calculation(grams).
--another one for the water amount for the coffee(water).
--the last one to store the value from the component CupSize which will be initalized to 227 as a default(selectedOption).
+- one for the slider component amount,the ratio (amount).
+- one to set the coffee grams amount based on the calculation(grams).
+- another one for the water amount for the coffee(water).
+- the last one to store the value from the component CupSize which will be initalized to 227 as a default(selectedOption).
 ```
   const [amount, setAmount] = useState();
   const [grams, setGrams] = useState();
@@ -88,6 +88,8 @@ export default CupSize;
 
 Going back to to the `AmountCalculator` the last thing we need to do here is pass the grams and water value to **BrewingMethodDetails** so it will change based on the user's choices. so this will be the finished code.
 
+
+**src/Components/AmountCalculator/index.js**
 ```
 import React, { useState } from "react";
 
@@ -182,3 +184,4 @@ export default AmountCalculator;
 
 and now you made your own basic coffee calculator!
 
+you can now move both trello card to `Done` and git `add`, `commit` and `push` your code!
