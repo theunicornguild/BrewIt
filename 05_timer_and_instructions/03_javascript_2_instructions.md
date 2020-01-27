@@ -106,4 +106,5 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
 };
 ```
 dont' forget to import it at the top!
+and for the last time `add`, `commit` and `push` and move your last card to `Done`!
 and that's all folks!!

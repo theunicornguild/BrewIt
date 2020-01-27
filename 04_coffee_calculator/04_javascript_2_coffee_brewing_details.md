@@ -1,7 +1,7 @@
 Last step before jumping into our last two components is to use the props that we sent and place them instead of the static coffee grams and water value that we had previously.
 
 So your `BrewingMethodDetails` should look like this.
-
+**src/Components/BrewingMethodDetails/index.js**
 ```
 import React from "react";
 
@@ -34,4 +34,6 @@ export default BrewingMethodDetails;
 ```
 and voila!
 
-don't forget to push this bit as well!
+
+don't forget to `push` this bit as well!
+

@@ -2,7 +2,7 @@
 
 Finally we're going to build a fun little component that will help the user while brewing their coffee which is a timer!
 
-Let's begin by going to our dear Component folder and make a folder called Timer and have an `index.js` file.
+Let's begin by going to our dear Components folder and make a folder called Timer and have an `index.js` file.
 
 we'll start by creating the basic structure of our component which will be the Start and Reset buttons and the section where the time itself will be displayed.
 
@@ -90,7 +90,7 @@ Next let's add a reset function to reset the timer.
 Next, we'll need the timer to actually work. and for that we're going to use the `setInterval` method.
 before we do that we're going to need another state to save the current time of the timer since we have both minutes and seconds in two seperate states.
 
- ` const [currentTime, setTime] = useState(0);`
+ `const [currentTime, setTime] = useState(0);`
 
 we're going to use the `useEffect` React Hook to detect whenever `isActive` is true to start the timer inside that function.
 ```
@@ -116,7 +116,7 @@ and that's it! now you have a perfectly functioning timer.
 you could stop here but to make this more fun we can add two new functions to alert the user if the timer is done based on the total time of the brewing method!
 
 
-this should be your final component.
+this should be your final `Timer/index.js` component.
 ```
 import React, { useState, useEffect } from "react";
 //Styling
@@ -191,3 +191,5 @@ const Timer = ({ brewingMethod }) => {
 
 export default Timer;
 ```
+
+git `add`, `commit` and `push` and move the card to `Done`!
