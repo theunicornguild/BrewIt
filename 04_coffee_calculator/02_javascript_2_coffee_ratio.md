@@ -1,4 +1,4 @@
-####Trello: I can then select the coffee to water ratio.
+#### Trello: I can then select the coffee to water ratio.
 move this card to `Doing` as well.
 
 Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and doing our calculations.
