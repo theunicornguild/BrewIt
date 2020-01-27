@@ -1,8 +1,11 @@
 To make our code cleaner and tidier, we need to move the code we wrote in the `App.js` file into its own component. 
-In your projects folder create a new folder and name it Components. Then, in that folder make another folder called BrewingList.
+In your projects folder you will see a folder called `Components`.
+Make another folder inside it called `BrewingList`.
 
 Inside this folder create a new file called `index.js` and place the code that we wrote in the `App.js` so it would look something like this.
 
+
+`src/Components/BrewingList/index.js`
 ```
 import React from "react";
 
@@ -20,7 +23,7 @@ const BrewingList = ({ brewingMethods }) => {
 export default BrewingList;
 ```
 
-After that we should call this component in the `App.js` to render it there and pass it the props necessary.
+After that we should call this component in the `App.js` to render it there and pass it the necessary props.
 replace the 'null' with the component.
 
 `<BrewingList brewingMethods={brewingMethods} />`
@@ -59,3 +62,4 @@ function App() {
 
 export default App;
 ```
+`src/App.js`
