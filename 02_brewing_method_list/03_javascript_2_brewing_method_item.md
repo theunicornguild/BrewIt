@@ -1,9 +1,9 @@
 After all thats done we want to apply some styling to each method to make it look more presentable.
 To do that I have included all the styling necessary but we will need to make another file for each brewing method item.
 
-In the BrewingList folder make a new file called `BrewMethodItem.js`
+In the `BrewingList` folder make a new file called `BrewMethodItem.js`
 
-and let's add the details that we need to display for each method, the `BrewMethodItem.js` file should look like this.
+and let's add the details that we need to display for each method, the `src/Components/BrewingList/BrewMethodItem.js` file should look like this.
 
 ```
 import React from "react";
@@ -37,7 +37,7 @@ const BrewMethodItem = ({ brewingMethod }) => {
 export default BrewMethodItem;
 ```
 
-We should then alter the `BrewingList/index.js` file to use the `BrewMethodItem` component.
+We should then alter the `src/BrewingList/index.js` file to use the `BrewMethodItem` component.
 
 ```
 import React from "react";
@@ -62,3 +62,4 @@ export default BrewingList;
 ```
 
 Now you can finally move the 'As a user I can see a list of brewing methods.' card in trello from `doing` to `done`!
+and then in your terminal git `add`, `commit` and `push` your code to your repo.
