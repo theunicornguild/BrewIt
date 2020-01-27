@@ -33,3 +33,5 @@ const BrewingMethodDetails = ({ brewingMethod, grams, water }) => {
 export default BrewingMethodDetails;
 ```
 and voila!
+
+don't forget to push this bit as well!
