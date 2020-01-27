@@ -34,4 +34,6 @@ export default BrewingMethodDetails;
 ```
 and voila!
 
-git `add`, `commit` and `push` your code and move the two trello card to `Done`!
+
+don't forget to `push` this bit as well!
+

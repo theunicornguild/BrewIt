@@ -1,4 +1,5 @@
-we've now done two of our main components and combined them in in one component which is the `AmountCalculator`but it still doesn't change any values.
+
+we've now done two of our main components and combined them in in one component which is `AmountCalculator` but it still doesn't change any values.
 
 we're going to add all the functions and pass all the props required to make our component more useful.
 
@@ -185,4 +186,5 @@ export default AmountCalculator;
 
 and now you made your own basic coffee calculator!
 
+you can now move both trello card to `Done` and git `add`, `commit` and `push` your code!
 

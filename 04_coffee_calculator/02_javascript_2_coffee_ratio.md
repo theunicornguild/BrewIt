@@ -1,16 +1,19 @@
 #### Trello: I can then select the coffee to water ratio.
 
-Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and do our calculations.
+move this card to `Doing` as well.
+
+Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and doing our calculations.
 
 and that component will be a number slider that we will import from `material-ui`.
 
 the slider will help determine how 'strong' or 'light' the coffee will be.
 
-let's make a new folder in the component's folder and call it `AmountCalculator` and create an `index.js` file.
+let's make a new folder in the Component's folder and call it `AmountCalculator` and create an `index.js` file.
 
 first let's import the slider.
 
-`src/Components/AmountCalculator/index.js`
+
+**src/Components/AmountCalculator/index.js**
 ```
 import React from "react";
 
@@ -77,12 +80,14 @@ export default AmountCalculator;
 
 The `marks` variable is an array to store the values of the slider to be displayed and also that we will use later for the calculation.
 and the `handleRatio` function just returns those values as a string. 
+
 so again so far this only displays the value but doesn't affect anything, so let's put the `CupSize` component and the `BrewingMethodDetails` in this `AmountCalculator/index.js` file.
 
 and put the `AmountCalculator` component in the `BrewingMethodModal/index.js` file to make things easier for later.
 
 don't forget to pass the **brewingMethod** as props.
 
+**src/Components/BrewingMethodModal/index.js**
 ```
 import React from "react";
 //Components
