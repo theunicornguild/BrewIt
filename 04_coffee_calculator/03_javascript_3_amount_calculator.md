@@ -1,36 +1,46 @@
+                                                      //Mariam: removed 1 "in"
 
-we've now done two of our main components and combined them in in one component which is `AmountCalculator` but it still doesn't change any values.
+we've now done two of our main components and combined them in one component which is `AmountCalculator` but it still doesn't change any values.
 
 we're going to add all the functions and pass all the props required to make our component more useful.
 
-First we'll add a few states, 
+First we'll add a few states,
+
 - one for the slider component amount,the ratio (amount).
 - one to set the coffee grams amount based on the calculation(grams).
 - another one for the water amount for the coffee(water).
 - the last one to store the value from the component CupSize which will be initalized to 227 as a default(selectedOption).
+
 ```
   const [amount, setAmount] = useState();
   const [grams, setGrams] = useState();
   const [water, setWater] = useState();
   const [selectedOption, setSelectedOption] = useState(227);
 ```
-  Now in our slider component we already have the `handleRatio` function being used there to simply return the value as a string. We'll add to the function so that it will also set the state.
+
+Now in our slider component we already have the `handleRatio` function being used there to simply return the value as a string. We'll add to the function so that it will also set the state.
+
 ```
     const handleRatio = value => {
     setAmount(value);
     return JSON.stringify(value);
   };
 ```
- Another thing we'll need is a function that we'll call `handleChange`. Which will do our main calculation for the coffee grams and water amount.
 
- the general equation is (cupsize/ratio amount) * 15.
+Another thing we'll need is a function that we'll call `handleChange`. Which will do our main calculation for the coffee grams and water amount.
+
+the general equation is (cupsize/ratio amount) \* 15.
+
 ```
    const handleChange = () => {
     setGrams(parseInt(selectedOption / amount));
     setWater(parseInt(grams * 15));
   };
 ```
-  and finally we'll put `handleChange` in `handleRatio` so it would call it whenever the users chooses another value from the slider.
+
+and finally we'll put `handleChange` in `handleRatio` so it would call it whenever the users chooses another value from the slider.
+//Mariam: user\*
+
 ```
     const handleRatio = value => {
     setAmount(value);
@@ -39,8 +49,9 @@ First we'll add a few states,
   };
 ```
 
-  Before switching to the `CupSize` component let's first send some props to it.
-  Add `handleChange`, `selectedOption` and `setSelectedOption`.
+Before switching to the `CupSize` component let's first send some props to it.
+Add `handleChange`, `selectedOption` and `setSelectedOption`.
+
 ```
    <CupSize
         handleChange={handleChange}
@@ -48,17 +59,21 @@ First we'll add a few states,
         setSelectedOption={setSelectedOption}
       />
 ```
+
 Now going over to `CupSize` and use these props to store our value.
 first we'll need another function to store the value on an `onClick` for each cup size(button) of the selected size in ml.
+
 ```
   const handleChoice = e => {
     setSelectedOption(e);
     handleChange(selectedOption);
   };
 ```
-  so the whole thing will look something like this.
 
-  **src/Components/CupSize/index.js**
+so the whole thing will look something like this.
+
+**src/Components/CupSize/index.js**
+
 ```
   import React from "react";
 
@@ -92,6 +107,7 @@ export default CupSize;
 Going back to to the `AmountCalculator` component the last thing we need to do here is pass the `grams` and `water` value to **BrewingMethodDetails** so it will change based on the user's choices. so this will be the finished code.
 
 **src/Components/AmountCalculator/index.js**
+
 ```
 import React, { useState } from "react";
 
@@ -188,3 +204,4 @@ and now you made your own basic coffee calculator!
 
 you can now move both trello card to `Done` and git `add`, `commit` and `push` your code!
 
+//Mariam: to mention moving the card in the next step because technically there's still an extra step afterwards (it made me think you forgot about it haha)

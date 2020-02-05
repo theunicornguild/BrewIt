@@ -1,11 +1,11 @@
-To make our code cleaner and tidier, we need to move the code we wrote in the `App.js` file into its own component. 
+To make our code cleaner and tidier, we need to move the code we wrote in the `App.js` file into its own component.
 In your projects folder you will see a folder called `Components`.
 Make another folder inside it called `BrewingList`.
 
 Inside this folder create a new file called `index.js` and place the code that we wrote in the `App.js` so it would look something like this.
 
-
 `src/Components/BrewingList/index.js`
+
 ```
 import React from "react";
 
@@ -26,9 +26,11 @@ export default BrewingList;
 After that we should call this component in the `App.js` to render it there and pass it the necessary props.
 replace the 'null' with the component.
 
+//Mariam: not clear what you're saying here! Rephrase?
+
 `<BrewingList brewingMethods={brewingMethods} />`
 
-`{showHome ? (null) : (<AboutPage />)}`    
+`{showHome ? (null) : (<AboutPage />)}`
 
 ```
 import React, { useState } from "react";
@@ -62,4 +64,7 @@ function App() {
 
 export default App;
 ```
+
+//Mariam: missing 1 curly bracket, Missing imports: navbar,aboutPage. undefined methods/variables: setShowHome, showHome(forgot to add the hook statement). Wrong import for BrewingList: /Components/BrewingList/index.js.
+
 `src/App.js`

@@ -5,6 +5,8 @@ In the `BrewingList` folder make a new file called `BrewMethodItem.js`
 
 and let's add the details that we need to display for each method, the `src/Components/BrewingList/BrewMethodItem.js` file should look like this.
 
+//Mariam: wrong import "../../style.css" in both BrewingList and BrewMethodItem
+
 ```
 import React from "react";
 
@@ -37,6 +39,7 @@ const BrewMethodItem = ({ brewingMethod }) => {
 export default BrewMethodItem;
 ```
 
+//Mariam: wrong path -> missing /Components
 We should then alter the `src/BrewingList/index.js` file to use the `BrewMethodItem` component.
 
 ```
@@ -61,5 +64,6 @@ const BrewingList = ({ brewingMethods }) => {
 export default BrewingList;
 ```
 
+//Mariam: add a key to the brewingList for each item
 Now you can finally move the 'As a user I can see a list of brewing methods.' card in trello from `doing` to `done`!
 and then in your terminal git `add`, `commit` and `push` your code to your repo.
