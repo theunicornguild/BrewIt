@@ -3,7 +3,6 @@
 move this card to `Doing` as well.
 
 Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and do our calculations.
-//Mariam: doing -> do
 and that component will be a number slider that we will import from `material-ui`.
 
 the slider will help determine how 'strong' or 'light' the coffee will be.

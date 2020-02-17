@@ -7,7 +7,6 @@ We made a few adjustments to it just because we're dealing with texts and not im
 
 First, as usual we'll go to our `Components` folder and make a new folder called `Instructions` and create an `index.js` file.
 
-//Mariam: add a key for the map statement
 
 ```
 import React from "react";
@@ -79,8 +78,8 @@ first we mapped over the instruction list array given in the `data.js` file.
 Next we take the first element in the array and return it with the class `carousel-item active` and increase the counter, so that all other elements will be returned with the class `carousel-item`.
 
 the count variable is as it's called, counts the number of instructions so we can display them as steps for the user.
-//Mariam: changed typo -> place
-finally we place the mapped array `instructionList` as the card text/body to actually display the instructions.
+
+finally we placed the mapped array `instructionList` as the card text/body to actually display the instructions.
 
 to display this we're going to add it under the `Timer` component in `BrewingMethodModal` within a `div` for styling purposes
 

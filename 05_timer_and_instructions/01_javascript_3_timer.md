@@ -97,8 +97,8 @@ now let's add this function to an onClick for the reset button.
     `  <button className="button btn-danger" onClick={reset}>Reset</button>`
 
 Next, we'll need the timer to actually work. and for that we're going to use the `setInterval` method.
-before we do that we're going to need another state to save the current time of the timer since we have both minutes and seconds in two seperate states.
-//Mariam: separate\*
+before we do that we're going to need another state to save the current time of the timer since we have both minutes and seconds in two separate states.
+
 `const [currentTime, setTime] = useState(0);`
 
 we're going to use the `useEffect` React Hook to detect whenever `isActive` is true to start the timer inside that function.
@@ -120,7 +120,7 @@ we're going to use the `useEffect` React Hook to detect whenever `isActive` is t
   }, [isActive, seconds, minutes]);
 ```
 
-so basically we first start off by creating a new variable `interval` and setting it to null. After that we 'detect' is `isActive` is true, if yes then we assign the previously created variable to a new one that triggers every 1000 milliseconds. If it's false then we clear our the interval and returning `clearInterval`. This is just like calling componentWillUnmount. //Mariam: fixed typo -> created
+so basically we first start off by creating a new variable `interval` and setting it to null. After that we 'detect' is `isActive` is true, if yes then we assign the previously created variable to a new one that triggers every 1000 milliseconds. If it's false then we clear our the interval and returning `clearInterval`. This is just like calling componentWillUnmount.
 
 and that's it! now you have a perfectly functioning timer.
 you could stop here but to make this more fun we can add two new functions to alert the user if the timer is done based on the total time of the brewing method!
@@ -133,20 +133,12 @@ import React, { useState, useEffect } from "react";
 import "../../timer.css";
 import "../../style.css";
 
-const Timer = ({ brewingMethod }) => {
+const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
-
-  const propSeconds = brewingMethod.total_time.substring(
-    brewingMethod.total_time.indexOf(":") + 1
-  );
-  const propMinutes = brewingMethod.total_time.substr(
-    0,
-    brewingMethod.total_time.indexOf(":")
-  );
 
   const reset = () => {
     setSeconds(0);
@@ -154,17 +146,10 @@ const Timer = ({ brewingMethod }) => {
     setIsActive(false);
   };
 
-  const checkTime = () => {
-    if (propMinutes === minutes && propSeconds === seconds) {
-      alert("all done!");
-      setIsActive(!isActive);
-    }
-  };
 
   useEffect(() => {
     let interval = null;
     if (isActive) {
-      checkTime();
       const startTime = Date.now() - currentTime;
       interval = setInterval(() => {
         setTime(Date.now() - startTime);

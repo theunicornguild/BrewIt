@@ -96,7 +96,6 @@ const BrewMethodItem = ({ brewingMethod }) => {
 export default BrewMethodItem;
 ```
 
-//Mariam: fixed typo: first word
 congratulations now you have a pop-up modal!
 You can move your trello card from `doing` to `done`!
 and git `add`, `commit` and `push` your code.

@@ -1,4 +1,3 @@
-                                                      //Mariam: removed 1 "in"
 
 we've now done two of our main components and combined them in one component which is `AmountCalculator` but it still doesn't change any values.
 
@@ -38,8 +37,7 @@ the general equation is (cupsize/ratio amount) \* 15.
   };
 ```
 
-and finally we'll put `handleChange` in `handleRatio` so it would call it whenever the users chooses another value from the slider.
-//Mariam: user\*
+and finally we'll put `handleChange` in `handleRatio` so it would call it whenever the user chooses another value from the slider.
 
 ```
     const handleRatio = value => {
@@ -202,6 +200,5 @@ export default AmountCalculator;
 
 and now you made your own basic coffee calculator!
 
-you can now move both trello card to `Done` and git `add`, `commit` and `push` your code!
+you can now move both trello cards to `Done` and git `add`, `commit` and `push` your code!
 
-//Mariam: to mention moving the card in the next step because technically there's still an extra step afterwards (it made me think you forgot about it haha)

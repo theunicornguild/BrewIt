@@ -23,14 +23,16 @@ const BrewingList = ({ brewingMethods }) => {
 export default BrewingList;
 ```
 
-After that we should call this component in the `App.js` to render it there and pass it the necessary props.
-replace the 'null' with the component.
+After that we should call this component in `App.js` to render it there and pass it the necessary props.
+replace the `'null'` written in the `showHome` condition:
 
-//Mariam: not clear what you're saying here! Rephrase?
+`{showHome ? (null) : (<AboutPage />)}`
+
+with the `BrewingList` component.
 
 `<BrewingList brewingMethods={brewingMethods} />`
 
-`{showHome ? (null) : (<AboutPage />)}`
+
 
 ```
 import React, { useState } from "react";
@@ -42,10 +44,14 @@ import "./App.css";
 import allBrewMethods from "./data";
 
 //Components
-import BrewingList from "./BrewingList/index";
+import BrewingList from "./Components/BrewingList/index.js";
+import AboutPage from "./Components/AboutPage";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const [brewingMethods] = useState(allBrewMethods);
+  const [showHome, setShowHome] = useState(true);
+
 
   return (
     <>
@@ -61,10 +67,7 @@ function App() {
       </div>
     </>
   );
-
+}
 export default App;
 ```
-
-//Mariam: missing 1 curly bracket, Missing imports: navbar,aboutPage. undefined methods/variables: setShowHome, showHome(forgot to add the hook statement). Wrong import for BrewingList: /Components/BrewingList/index.js.
-
 `src/App.js`
