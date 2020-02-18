@@ -2,8 +2,7 @@
 
 move this card to `Doing` as well.
 
-Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and doing our calculations.
-
+Our buttons currently don't really do anything that's because we need one more component to start connecting everything together and do our calculations.
 and that component will be a number slider that we will import from `material-ui`.
 
 the slider will help determine how 'strong' or 'light' the coffee will be.
@@ -12,8 +11,8 @@ let's make a new folder in the Component's folder and call it `AmountCalculator`
 
 first let's import the slider.
 
-
 **src/Components/AmountCalculator/index.js**
+
 ```
 import React from "react";
 
@@ -79,7 +78,7 @@ export default AmountCalculator;
 ```
 
 The `marks` variable is an array to store the values of the slider to be displayed and also that we will use later for the calculation.
-and the `handleRatio` function just returns those values as a string. 
+and the `handleRatio` function just returns those values as a string.
 
 so again so far this only displays the value but doesn't affect anything, so let's put the `CupSize` component and the `BrewingMethodDetails` in this `AmountCalculator/index.js` file.
 
@@ -88,6 +87,7 @@ and put the `AmountCalculator` component in the `BrewingMethodModal/index.js` fi
 don't forget to pass the **brewingMethod** as props.
 
 **src/Components/BrewingMethodModal/index.js**
+
 ```
 import React from "react";
 //Components
@@ -115,7 +115,6 @@ const BrewingMethodModal = ({ brewingMethod, handleToggle, modalState }) => {
 };
 export default BrewingMethodModal;
 ```
-
 
 **src/Components/AmountCalculator/index.js**
 

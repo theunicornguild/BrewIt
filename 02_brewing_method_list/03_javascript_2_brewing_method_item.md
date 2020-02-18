@@ -9,7 +9,7 @@ and let's add the details that we need to display for each method, the `src/Comp
 import React from "react";
 
 // Styling
-import "../style.css";
+import "../../style.css";
 
 const BrewMethodItem = ({ brewingMethod }) => {
   return (
@@ -37,7 +37,7 @@ const BrewMethodItem = ({ brewingMethod }) => {
 export default BrewMethodItem;
 ```
 
-We should then alter the `src/BrewingList/index.js` file to use the `BrewMethodItem` component.
+We should then alter the `src/Components/BrewingList/index.js` file to use the `BrewMethodItem` component.
 
 ```
 import React from "react";
@@ -46,7 +46,7 @@ import React from "react";
 import BrewMethodItem from "./BrewMethodItem";
 
 //Styling
-import "../style.css";
+import "../../style.css";
 
 const BrewingList = ({ brewingMethods }) => {
   const methodList = brewingMethods.map(method => (

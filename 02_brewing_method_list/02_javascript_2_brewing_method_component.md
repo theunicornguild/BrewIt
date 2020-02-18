@@ -1,11 +1,11 @@
-To make our code cleaner and tidier, we need to move the code we wrote in the `App.js` file into its own component. 
+To make our code cleaner and tidier, we need to move the code we wrote in the `App.js` file into its own component.
 In your projects folder you will see a folder called `Components`.
 Make another folder inside it called `BrewingList`.
 
 Inside this folder create a new file called `index.js` and place the code that we wrote in the `App.js` so it would look something like this.
 
-
 `src/Components/BrewingList/index.js`
+
 ```
 import React from "react";
 
@@ -23,12 +23,16 @@ const BrewingList = ({ brewingMethods }) => {
 export default BrewingList;
 ```
 
-After that we should call this component in the `App.js` to render it there and pass it the necessary props.
-replace the 'null' with the component.
+After that we should call this component in `App.js` to render it there and pass it the necessary props.
+replace the `'null'` written in the `showHome` condition:
+
+`{showHome ? (null) : (<AboutPage />)}`
+
+with the `BrewingList` component.
 
 `<BrewingList brewingMethods={brewingMethods} />`
 
-`{showHome ? (null) : (<AboutPage />)}`    
+
 
 ```
 import React, { useState } from "react";
@@ -40,10 +44,14 @@ import "./App.css";
 import allBrewMethods from "./data";
 
 //Components
-import BrewingList from "./BrewingList/index";
+import BrewingList from "./Components/BrewingList/index.js";
+import AboutPage from "./Components/AboutPage";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const [brewingMethods] = useState(allBrewMethods);
+  const [showHome, setShowHome] = useState(true);
+
 
   return (
     <>
@@ -59,7 +67,7 @@ function App() {
       </div>
     </>
   );
-
+}
 export default App;
 ```
 `src/App.js`

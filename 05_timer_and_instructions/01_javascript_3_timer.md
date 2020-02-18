@@ -7,6 +7,7 @@ Let's begin by going to our dear Components folder and make a folder called Time
 we'll start by creating the basic structure of our component which will be the Start and Reset buttons and the section where the time itself will be displayed.
 
 As mentioned previously all styling has been already provided in the starter file so we'll just import it.
+
 ```
 import React from "react";
 
@@ -35,15 +36,18 @@ To view this, let's call this component in our `BrewingMethodModal` and place it
 Now let's create our states which are Seconds, Minutes which will store the value of the timer and `isActive` which will have the timer's state to check whether it's active or paused.
 
 (don't forget to import useState at the top).
+
 ```
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
 ```
-  we initialized the `seconds` and `minutes` to zero and the `isActive` state is false as in paused.
 
-  Now let's incorporate our states into the code we wrote earlier to change the component based on the current state.
+we initialized the `seconds` and `minutes` to zero and the `isActive` state is false as in paused.
+
+Now let's incorporate our states into the code we wrote earlier to change the component based on the current state.
+
 ```
   return (
     <div className="app">
@@ -63,8 +67,10 @@ Now let's create our states which are Seconds, Minutes which will store the valu
     </div>
   );
 ```
-  now that we have our basic structure let's make this timer actually work.
-  let's start by adding an `onClick` for the first button to set the state for starting/pausing the timer.
+
+now that we have our basic structure let's make this timer actually work.
+let's start by adding an `onClick` for the first button to set the state for starting/pausing the timer.
+
 ```
          <button
           className={`button button-primary button-secondary-${
@@ -75,7 +81,9 @@ Now let's create our states which are Seconds, Minutes which will store the valu
           {isActive ? "Pause" : "Start"}
         </button>
 ```
+
 Next let's add a reset function to reset the timer.
+
 ```
   const reset = () => {
     setSeconds(0);
@@ -83,16 +91,18 @@ Next let's add a reset function to reset the timer.
     setIsActive(false);
   };
 ```
-  now let's add this function to an onClick for the reset button.
+
+now let's add this function to an onClick for the reset button.
 
     `  <button className="button btn-danger" onClick={reset}>Reset</button>`
 
 Next, we'll need the timer to actually work. and for that we're going to use the `setInterval` method.
-before we do that we're going to need another state to save the current time of the timer since we have both minutes and seconds in two seperate states.
+before we do that we're going to need another state to save the current time of the timer since we have both minutes and seconds in two separate states.
 
- `const [currentTime, setTime] = useState(0);`
+`const [currentTime, setTime] = useState(0);`
 
 we're going to use the `useEffect` React Hook to detect whenever `isActive` is true to start the timer inside that function.
+
 ```
   useEffect(() => {
     let interval = null;
@@ -110,33 +120,25 @@ we're going to use the `useEffect` React Hook to detect whenever `isActive` is t
   }, [isActive, seconds, minutes]);
 ```
 
-so basically we first start off by creating a new variable `interval` and setting it to null. After that we 'detect' is `isActive` is true, if yes then we assign the previously cerated variable to a new one that triggers every 1000 milliseconds. If it's false then we clear our the interval and returning `clearInterval`. This is just like calling componentWillUnmount.
+so basically we first start off by creating a new variable `interval` and setting it to null. After that we 'detect' is `isActive` is true, if yes then we assign the previously created variable to a new one that triggers every 1000 milliseconds. If it's false then we clear our the interval and returning `clearInterval`. This is just like calling componentWillUnmount.
 
 and that's it! now you have a perfectly functioning timer.
 you could stop here but to make this more fun we can add two new functions to alert the user if the timer is done based on the total time of the brewing method!
 
-
 this should be your final `Timer/index.js` component.
+
 ```
 import React, { useState, useEffect } from "react";
 //Styling
 import "../../timer.css";
 import "../../style.css";
 
-const Timer = ({ brewingMethod }) => {
+const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
-
-  const propSeconds = brewingMethod.total_time.substring(
-    brewingMethod.total_time.indexOf(":") + 1
-  );
-  const propMinutes = brewingMethod.total_time.substr(
-    0,
-    brewingMethod.total_time.indexOf(":")
-  );
 
   const reset = () => {
     setSeconds(0);
@@ -144,17 +146,10 @@ const Timer = ({ brewingMethod }) => {
     setIsActive(false);
   };
 
-  const checkTime = () => {
-    if (propMinutes === minutes && propSeconds === seconds) {
-      alert("all done!");
-      setIsActive(!isActive);
-    }
-  };
 
   useEffect(() => {
     let interval = null;
     if (isActive) {
-      checkTime();
       const startTime = Date.now() - currentTime;
       interval = setInterval(() => {
         setTime(Date.now() - startTime);
