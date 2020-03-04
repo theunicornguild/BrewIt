@@ -5,7 +5,9 @@ Yarn is a package manager and task runner for javascript.
 
 You can install yarn using Homebrew by writing this in the terminal on Mac.
 
-`$ brew install yarn`
+```
+$ brew install yarn
+```
 
 ### Git.
 
@@ -21,7 +23,9 @@ Once that’s done you’ll need to `Clone` it. On your terminal:
  *	First `cd` into your project’s folder
  *	`Clone` the project
 
-`$ git clone https://github.com/<your_github_username>/BrewIt-Starter.git`
+```
+$ git clone https://github.com/<your_github_username>/BrewIt-Starter.git
+```
 
 cd into the project folder and install the packages
 ```
@@ -31,4 +35,6 @@ $ yarn install
 
 You can run the project and view it on your browser
 
-`$ yarn start`
+```
+$ yarn start
+```
