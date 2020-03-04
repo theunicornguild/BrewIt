@@ -24,10 +24,10 @@ Once that’s done you’ll need to `Clone` it. On your terminal:
 `$ git clone https://github.com/<your_github_username>/BrewIt-Starter.git`
 
 cd into the project folder and install the packages
-
-`$ cd brewit-starter`
-
-`$ yarn install`
+```
+$ cd brewit-starter
+$ yarn install
+```
 
 You can run the project and view it on your browser
 
