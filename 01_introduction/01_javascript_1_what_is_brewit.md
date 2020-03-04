@@ -1,2 +1,1 @@
-## What is BrewIt?
 In this project you will build a website using javascript to make a coffee brewing calculator. The user will be able to choose from a list of brewing methods of their choice. The user will then be able to select the size of the coffee cup they’ll be brewing and customize their cup of coffee based on their preference by changing the water to coffee ratio. After that the user will view a list of instructions and a timer to start brewing their coffee.
